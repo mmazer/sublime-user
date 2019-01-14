@@ -1,0 +1,36 @@
+[
+  // Vintage
+  { "keys": ["ctrl+["],
+    "command": "exit_insert_mode",
+    "context": [
+      { "key": "setting.command_mode", "operand": false },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+   },
+   { "keys": ["g", "l"], "command": "set_motion", "args": {
+      "motion": "vi_move_to_hard_eol",
+      "motion_args": {"repeat": 1, "extend": true},
+      "inclusive": true,
+      "clip_to_line": true },
+      "context": [{"key": "setting.command_mode"}]
+    },
+    { "keys": ["g", "h"], "command": "set_motion", "args": {
+        "motion": "vi_move_to_first_non_white_space_character",
+        "motion_args": {"extend": true },
+        "clip_to_line": true },
+        "context": [{"key": "setting.command_mode"}]
+    },
+    {
+      "keys": ["g","m"],
+      "command": "go_line_middle",
+      "context": [{"key": "setting.command_mode"}]
+    },
+    { "keys": ["super+]"], "command": "next_view"},
+    { "keys": ["super+["], "command": "prev_view"},
+    // Origami
+    { "keys": ["super+k", "k"], "command": "travel_to_pane", "args": {"direction": "up"} },
+    { "keys": ["super+k", "l"], "command": "travel_to_pane", "args": {"direction": "right"} },
+    { "keys": ["super+k", "j"], "command": "travel_to_pane", "args": {"direction": "down"} },
+    { "keys": ["super+k", "h"], "command": "travel_to_pane", "args": {"direction": "left"} }
+
+]
